@@ -8,8 +8,17 @@ repositories {
     mavenCentral()
 }
 
+dependencyManagement {
+    imports {
+        mavenBom("org.springframework.cloud:spring-cloud-dependencies:2023.0.0")
+    }
+}
+
 dependencies {
     implementation("org.springframework.cloud:spring-cloud-starter-gateway:4.1.1")
+    // EUREKA CLIENT
+    implementation("org.springframework.cloud:spring-cloud-starter-netflix-eureka-client")
+
     implementation("org.springframework.boot:spring-boot-starter-actuator")
 
     implementation("io.netty:netty-resolver-dns-native-macos:4.1.72.Final:osx-aarch_64")

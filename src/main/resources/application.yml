@@ -5,13 +5,18 @@ spring:
     gateway:
       routes:
       - id: todolist-backend
-        uri: http://localhost:8080
+        uri: lb://todolist-backend
         predicates:
         - Path=/**
       - id: todolist-task-distributor
-        uri: http://localhost:8081
+        uri: lb://todolist-task-distributor
         predicates:
         - Path=/**
+
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://localhost:8761/eureka/
 
 management:
   endpoint:

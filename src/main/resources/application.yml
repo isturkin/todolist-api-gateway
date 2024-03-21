@@ -1,0 +1,26 @@
+spring:
+  application:
+    name: api-gateway
+  cloud:
+    gateway:
+      routes:
+      - id: todolist-backend
+        uri: http://localhost:8080
+        predicates:
+        - Path=/**
+      - id: todolist-task-distributor
+        uri: http://localhost:8081
+        predicates:
+        - Path=/**
+
+management:
+  endpoint:
+    gateway:
+      enabled: true
+  endpoints:
+    web:
+      exposure:
+        include: "*"
+
+server:
+  port: 8082

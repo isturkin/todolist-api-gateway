@@ -7,11 +7,11 @@ spring:
       - id: todolist-backend
         uri: http://localhost:8080
         predicates:
-        - Path=/**
+        - Path=/projects/**
       - id: todolist-task-distributor
         uri: http://localhost:8081
         predicates:
-        - Path=/**
+        - Path=/test/**
 
 management:
   endpoint:
@@ -24,3 +24,7 @@ management:
 
 server:
   port: 8082
+
+logging:
+  level:
+    org.springframework.cloud: TRACE

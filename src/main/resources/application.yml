@@ -7,11 +7,11 @@ spring:
       - id: todolist-backend
         uri: lb://todolist-backend
         predicates:
-        - Path=/**
+        - Path=/projects/**
       - id: todolist-task-distributor
         uri: lb://todolist-task-distributor
         predicates:
-        - Path=/**
+        - Path=/test/**
 
 eureka:
   client:

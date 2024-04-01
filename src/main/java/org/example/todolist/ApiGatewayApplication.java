@@ -1,4 +1,4 @@
-package tech.speckit.todolist;
+package org.example.todolist;
 
 
 import org.springframework.boot.SpringApplication;

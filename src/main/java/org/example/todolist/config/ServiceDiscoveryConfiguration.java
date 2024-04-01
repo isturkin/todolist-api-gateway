@@ -1,4 +1,4 @@
-package tech.speckit.todolist.config;
+package org.example.todolist.config;
 
 import org.springframework.cloud.client.discovery.EnableDiscoveryClient;
 import org.springframework.cloud.client.discovery.ReactiveDiscoveryClient;
